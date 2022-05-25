@@ -1,0 +1,6 @@
+server:
+  port: 80
+
+springdoc:
+  swagger-ui:
+    path: /swagger.html
