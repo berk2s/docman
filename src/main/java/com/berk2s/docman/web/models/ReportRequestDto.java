@@ -1,8 +1,10 @@
 package com.berk2s.docman.web.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -15,6 +17,8 @@ import java.util.Map;
  * Requests that incoming to reporter endpoint must contain this format and schema
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class ReportRequestDto {
 
@@ -22,7 +26,7 @@ public class ReportRequestDto {
      * Report name indicates the name of report that will be generated
      */
     @JsonProperty("reportName")
-    @NotBlank(message = "Report name is mandatory")
+    @NotNull(message = "Report name is mandatory")
     private Report reportName;
 
     /**

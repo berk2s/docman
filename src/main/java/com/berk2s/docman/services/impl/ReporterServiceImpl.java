@@ -32,6 +32,8 @@ public class ReporterServiceImpl implements ReporterService {
 
             jasperPrint.setName(reportRequest.getReportName().name());
 
+            log.info("Report has been created");
+
             return JasperExportManager.exportReportToPdf(jasperPrint);
         } catch (FileNotFoundException | JRException e) {
             log.info("Error while generating report [message: {}]", e.getMessage());
